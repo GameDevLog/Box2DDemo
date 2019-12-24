@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE48645523B1AAAB0043A16D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE48645423B1AAAB0043A16D /* main.cpp */; };
+		DE48645D23B1ABC80043A16D /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE48645C23B1ABC80043A16D /* libBox2D.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		DE48645123B1AAAB0043A16D /* Box2DDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Box2DDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE48645423B1AAAB0043A16D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DE48645C23B1ABC80043A16D /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = Box2D/lib/libBox2D.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE48645D23B1ABC80043A16D /* libBox2D.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +46,7 @@
 			children = (
 				DE48645323B1AAAB0043A16D /* Box2DDemo */,
 				DE48645223B1AAAB0043A16D /* Products */,
+				DE48645B23B1ABC80043A16D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +64,14 @@
 				DE48645423B1AAAB0043A16D /* main.cpp */,
 			);
 			path = Box2DDemo;
+			sourceTree = "<group>";
+		};
+		DE48645B23B1ABC80043A16D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE48645C23B1ABC80043A16D /* libBox2D.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +251,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Box2D/include";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Box2D/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -247,6 +264,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Box2D/include";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Box2D/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
